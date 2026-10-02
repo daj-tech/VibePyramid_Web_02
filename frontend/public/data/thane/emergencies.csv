@@ -1,0 +1,5 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+EMG001,Police Emergency Reference,Emergencies,Police,Reference contact information for emergency police assistance. Verify before real-world use.,Thane,Current,24x7,,Synthetic Demo Record,ACTIVE,High
+EMG002,Ambulance Emergency Reference,Emergencies,Ambulance,Reference contact information for ambulance assistance. Verify before real-world use.,Thane,Current,24x7,,Synthetic Demo Record,ACTIVE,High
+EMG003,Hospital Emergency Reference,Emergencies,Hospitals,Reference information for emergency hospital services. Verify before real-world use.,Thane,Current,24x7,,Synthetic Demo Record,ACTIVE,High
+EMG004,Emergency Services Guidance,Emergencies,Emergency Contacts,Demonstration guidance page reminding users to contact appropriate official emergency services.,Thane,Current,24x7,,Synthetic Demo Record,ACTIVE,High

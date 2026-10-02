@@ -1,0 +1,6 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+LOC001,Scheduled Electricity Maintenance,Local,Electricity Cut,Synthetic demonstration record for planned electrical maintenance.,Thane West,04 October 2026,02:00 PM,,Official Notice - Demo,ACTIVE,High
+LOC002,Water Supply Maintenance,Local,Water Shortage,Demonstration notice for temporary water supply maintenance.,Manpada,06 October 2026,09:00 AM,,Synthetic Demo Record,ACTIVE,High
+LOC003,Lost Wallet Report,Local,Lost & Found,Black wallet reported lost near a synthetic demonstration location.,Thane East,02 October 2026,01:00 PM,,Synthetic Demo Record,ACTIVE,Medium
+LOC004,Road Blockage Resolved,Local,Other Local Issues,Previously reported road blockage has been marked resolved in the demo dataset.,Ghodbunder Road,30 September 2026,06:00 PM,,Synthetic Demo Record,RESOLVED,High
+LOC005,Found Item Notice,Local,Lost & Found,Found personal item available for identification in this synthetic example.,Wagle Estate,03 October 2026,12:00 PM,,Synthetic Demo Record,ACTIVE,Low

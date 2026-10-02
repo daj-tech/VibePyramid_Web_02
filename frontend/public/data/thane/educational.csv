@@ -1,0 +1,5 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+EDU001,Scholarship Application Window,Educational,Scholarships,Scholarship application support session for students.,Thane West,06 October 2026,10:00 AM,10 October 2026,Synthetic Demo Record,UPCOMING,High
+EDU002,College Admission Guidance,Educational,Admissions,Guidance session covering common admission documentation and timelines.,Thane East,08 October 2026,02:00 PM,08 October 2026,Synthetic Demo Record,UPCOMING,Medium
+EDU003,Semester Exam Notice,Educational,Exam Dates,Demonstration notice for an upcoming semester examination schedule.,Manpada,01 October 2026,09:00 AM,01 October 2026,Synthetic Demo Record,EXPIRED,High
+EDU004,Academic Planning Workshop,Educational,Academic Announcements,Study planning and academic organization workshop.,Wagle Estate,12 October 2026,11:00 AM,12 October 2026,Synthetic Demo Record,UPCOMING,Low

@@ -1,0 +1,5 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+INT001,Web Development Internship Drive,Internships & Skills,Internships,Synthetic internship opportunity for students interested in web development.,Thane West,15 October 2026,10:00 AM,15 October 2026,Synthetic Demo Record,UPCOMING,High
+INT002,Python Fundamentals Workshop,Internships & Skills,Skills / Learning Opportunities,Hands-on beginner workshop covering Python programming fundamentals.,Manpada,09 October 2026,11:00 AM,09 October 2026,Synthetic Demo Record,UPCOMING,Medium
+INT003,Resume Building Session,Internships & Skills,Career-related Information,Session on resume structure, projects and basic interview preparation.,Thane East,04 October 2026,03:00 PM,04 October 2026,Synthetic Demo Record,UPCOMING,Medium
+INT004,Cloud Basics Certification Camp,Internships & Skills,Certifications,Demonstration learning opportunity for introductory cloud concepts.,Wagle Estate,20 October 2026,10:00 AM,20 October 2026,Synthetic Demo Record,UPCOMING,Low

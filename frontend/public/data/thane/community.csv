@@ -1,0 +1,5 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+COM001,Neighbourhood Cleanliness Drive,Community,Community Notice,Residents are invited to participate in a synthetic community cleanliness activity.,Thane West,05 October 2026,07:30 AM,,Synthetic Demo Record,UPCOMING,Medium
+COM002,Resident Association Meeting,Community,Community Announcement,Monthly area meeting covering common local concerns.,Thane East,07 October 2026,06:30 PM,,Synthetic Demo Record,UPCOMING,Medium
+COM003,Community Notice Board Update,Community,Local Update,Demonstration update about community facilities and shared spaces.,Manpada,03 October 2026,05:00 PM,,Synthetic Demo Record,ACTIVE,Low
+COM004,Senior Citizen Support Session,Community,Community Notice,Information session for local senior citizen support resources.,Ghodbunder Road,11 October 2026,04:00 PM,,Synthetic Demo Record,UPCOMING,Medium

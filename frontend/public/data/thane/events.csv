@@ -1,0 +1,5 @@
+id,title,category,subcategory,description,area,date,time,deadline,source,status,priority
+EVT001,Community Awareness Workshop,Events,Awareness Programs,Demonstration awareness workshop for local residents.,Thane West,10 October 2026,10:30 AM,10 October 2026,Synthetic Demo Record,UPCOMING,Medium
+EVT002,Weekend Cleaning Drive,Events,Cleaning Drives,Community cleaning drive demonstration event.,Manpada,05 October 2026,07:30 AM,05 October 2026,Synthetic Demo Record,UPCOMING,Medium
+EVT003,Student Technology Seminar,Events,Seminars,Technology seminar for students and early-career learners.,Thane East,18 October 2026,02:00 PM,18 October 2026,Synthetic Demo Record,UPCOMING,High
+EVT004,Local Skills Meetup,Events,Community Events,Informal meetup for learning and sharing practical skills.,Wagle Estate,13 October 2026,05:30 PM,13 October 2026,Synthetic Demo Record,UPCOMING,Low
