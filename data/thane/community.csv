@@ -1,0 +1,9 @@
+﻿id,title,category,subcategory,description,region,local_area,event_date,start_time,end_time,deadline,status,priority,source_type,source_reference,contact_info,notification_days_before
+COM001,Community Cleanliness Announcement,Community,Announcement,Monthly community cleanliness activity and local participation notice.,Thane,Naupada,2026-10-05,08:00,10:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1
+COM002,Resident Association Meeting,Community,Community Notice,Residents are invited to a local discussion on common area maintenance.,Thane,Thane West,2026-10-07,18:00,19:30,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1
+COM003,Water Conservation Awareness Meet,Community,Awareness,Awareness session on household water conservation practices.,Thane,Kopri,2026-10-11,10:30,12:00,,UPCOMING,Medium,Public Announcement,DEMO-DATA,,1
+COM004,Local Community Volunteer Call,Community,Volunteer,Volunteer registration for a neighborhood support activity.,Thane,Kalwa,2026-10-10,09:00,11:00,2026-10-08,ACTIVE,Medium,Community Demo,DEMO-DATA,,2
+COM005,Community Sports Gathering,Community,Community Event,Open community sports gathering for local residents.,Thane,Majiwada,2026-10-18,07:00,10:00,,UPCOMING,Low,Community Demo,DEMO-DATA,,2
+COM006,Society Maintenance Update,Community,Important Notice,Demonstration notice about scheduled maintenance work in a residential community.,Thane,Manpada,2026-10-04,09:00,14:00,,ACTIVE,Medium,Community Demo,DEMO-DATA,,1
+COM007,Previous Neighborhood Meeting,Community,Community Notice,Past community meeting kept as a demonstration of an expired record.,Thane,Thane East,2026-08-28,18:00,19:00,,EXPIRED,Low,Community Demo,DEMO-DATA,,0
+COM008,Community Help Session,Community,Support,Local support session for residents needing guidance on common services.,Thane,Kolshet,2026-10-15,11:00,13:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,2

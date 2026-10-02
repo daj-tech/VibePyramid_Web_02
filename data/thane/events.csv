@@ -1,0 +1,9 @@
+﻿id,title,category,subcategory,description,region,local_area,event_date,start_time,end_time,deadline,status,priority,source_type,source_reference,contact_info,notification_days_before
+EVT001,AI & Web Development Workshop,Events,Workshop,Demonstration workshop covering AI-assisted web development concepts.,Thane,Thane West,2026-10-06,11:00,14:00,,UPCOMING,High,Public Announcement,DEMO-DATA,,1
+EVT002,Community Cleaning Drive,Events,Cleaning Drive,Neighborhood cleanliness activity for local volunteers.,Thane,Kopri,2026-10-05,07:00,10:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1
+EVT003,Career Guidance Seminar,Events,Seminar,"Demonstration seminar on higher studies, internships and career planning.",Thane,Majiwada,2026-10-10,10:00,13:00,,UPCOMING,High,Public Announcement,DEMO-DATA,,2
+EVT004,Student Project Showcase,Events,College Event,Demonstration showcase where students present technical projects.,Thane,Naupada,2026-10-12,12:00,16:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1
+EVT005,Digital Safety Awareness Session,Events,Awareness Program,Community session on safe and responsible digital practices.,Thane,Wagle Estate,2026-10-17,15:00,17:00,,UPCOMING,Medium,Public Announcement,DEMO-DATA,,2
+EVT006,Health & Wellness Camp,Events,Community Event,Demonstration local wellness camp and awareness activity.,Thane,Manpada,2026-10-19,09:00,13:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,2
+EVT007,Past Skill Workshop,Events,Workshop,Past demonstration workshop retained to test expired/completed event display.,Thane,Vartak Nagar,2026-09-20,11:00,13:00,,EXPIRED,Low,Public Announcement,DEMO-DATA,,0
+EVT008,Volunteer Orientation,Events,Community Event,Orientation session for people joining community volunteer activities.,Thane,Kolshet,2026-10-08,17:00,18:30,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1

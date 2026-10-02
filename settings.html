@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Settings - Manage your profile, local area, notification preferences and account settings."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Settings | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button active"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-heading">
+
+            <span class="eyebrow">
+                LOCALLINK · ACCOUNT
+            </span>
+
+            <div class="page-title-row">
+
+                <div>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Manage your profile, local area,
+                        notification preferences and account.
+                    </p>
+
+                </div>
+
+                <a
+                    href="dashboard.html"
+                    class="button secondary"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MESSAGE AREA
+             ================================================= -->
+
+        <div
+            id="settingsMessage"
+            class="success-box"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></div>
+
+
+        <!-- =================================================
+             PROFILE SECTION
+             ================================================= -->
+
+        <section class="settings-section">
+
+            <div class="settings-section-header">
+
+                <div class="settings-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PROFILE
+                    </span>
+
+                    <h2>
+                        Your Account
+                    </h2>
+
+                    <p>
+                        View your current LocalLink account
+                        information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+                <!-- Name -->
+
+                <div class="settings-field">
+
+                    <label>
+                        Name
+                    </label>
+
+                    <div
+                        id="profileName"
+                        class="settings-value"
+                    >
+                        User
+                    </div>
+
+                </div>
+
+
+                <!-- Username -->
+
+                <div class="settings-field">
+
+                    <label>
+                        Username
+                    </label>
+
+                    <div
+                        id="profileUsername"
+                        class="settings-value"
+                    >
+                        @user
+                    </div>
+
+                </div>
+
+
+                <!-- Region -->
+
+                <div class="settings-field">
+
+                    <label>
+                        Region
+                    </label>
+
+                    <div
+                        id="profileRegion"
+                        class="settings-value"
+                    >
+                        Thane
+                    </div>
+
+                </div>
+
+
+                <!-- Area -->
+
+                <div class="settings-field">
+
+                    <label>
+                        Selected Area
+                    </label>
+
+                    <div
+                        id="profileArea"
+                        class="settings-value"
+                    >
+                        All Areas
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCATION SETTINGS
+             ================================================= -->
+
+        <section class="settings-section">
+
+            <div class="settings-section-header">
+
+                <div class="settings-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        LOCAL RELEVANCE
+                    </span>
+
+                    <h2>
+                        Location Preferences
+                    </h2>
+
+                    <p>
+                        Select the region and local area used
+                        for displaying relevant information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-form-grid">
+
+                <!-- Region -->
+
+                <div class="settings-field">
+
+                    <label for="settingsRegion">
+                        Region
+                    </label>
+
+                    <select
+                        id="settingsRegion"
+                        class="settings-select"
+                    >
+
+                        <option value="Thane">
+                            Thane
+                        </option>
+
+                    </select>
+
+                    <small>
+                        Current LocalLink prototype region.
+                    </small>
+
+                </div>
+
+
+                <!-- Local Area -->
+
+                <div class="settings-field">
+
+                    <label for="settingsArea">
+                        Local Area
+                    </label>
+
+                    <select
+                        id="settingsArea"
+                        class="settings-select"
+                    >
+
+                        <option value="All Areas">
+                            All Areas
+                        </option>
+
+                        <option value="Thane West">
+                            Thane West
+                        </option>
+
+                        <option value="Thane East">
+                            Thane East
+                        </option>
+
+                        <option value="Wagle Estate">
+                            Wagle Estate
+                        </option>
+
+                        <option value="Manpada">
+                            Manpada
+                        </option>
+
+                        <option value="Majiwada">
+                            Majiwada
+                        </option>
+
+                        <option value="Kopri">
+                            Kopri
+                        </option>
+
+                        <option value="Naupada">
+                            Naupada
+                        </option>
+
+                    </select>
+
+                    <small>
+                        Information can be filtered according
+                        to the selected area.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-action-row">
+
+                <button
+                    type="button"
+                    id="saveLocationButton"
+                    class="button primary"
+                >
+                    Save Location
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATION SETTINGS
+             ================================================= -->
+
+        <section class="settings-section">
+
+            <div class="settings-section-header">
+
+                <div class="settings-icon">
+                    🔔
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PWA NOTIFICATIONS
+                    </span>
+
+                    <h2>
+                        Notification Preferences
+                    </h2>
+
+                    <p>
+                        Control reminders for important local
+                        events, deadlines and opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Main Toggle -->
+
+            <div class="settings-option">
+
+                <div class="settings-option-content">
+
+                    <div>
+
+                        <strong>
+                            LocalLink Notifications
+                        </strong>
+
+                        <p>
+                            Receive browser notifications for
+                            important reminders.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="notificationToggle"
+                        class="toggle-button"
+                        aria-pressed="false"
+                        aria-label="Toggle notifications"
+                    >
+
+                        <span class="toggle-circle"></span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="notification-status">
+
+                    <span>
+                        Browser permission
+                    </span>
+
+                    <strong id="notificationPermission">
+                        Checking...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reminder Timing -->
+
+            <div class="settings-option">
+
+                <div class="settings-option-content">
+
+                    <div>
+
+                        <strong>
+                            Reminder Timing
+                        </strong>
+
+                        <p>
+                            Choose how early LocalLink should
+                            remind you about important dates.
+                        </p>
+
+                    </div>
+
+
+                    <select
+                        id="reminderDays"
+                        class="settings-small-select"
+                    >
+
+                        <option value="1">
+                            1 day before
+                        </option>
+
+                        <option value="3">
+                            3 days before
+                        </option>
+
+                        <option value="7" selected>
+                            7 days before
+                        </option>
+
+                        <option value="14">
+                            14 days before
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Test Notification -->
+
+            <div class="settings-option">
+
+                <div class="settings-option-content">
+
+                    <div>
+
+                        <strong>
+                            Test Notification
+                        </strong>
+
+                        <p>
+                            Send a browser notification to
+                            check whether notifications work.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="testNotificationButton"
+                        class="button secondary"
+                    >
+                        Test
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PWA SECTION
+             ================================================= -->
+
+        <section class="settings-section">
+
+            <div class="settings-section-header">
+
+                <div class="settings-icon">
+                    📱
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PROGRESSIVE WEB APP
+                    </span>
+
+                    <h2>
+                        LocalLink App
+                    </h2>
+
+                    <p>
+                        Use LocalLink as an installable
+                        Progressive Web App on supported browsers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="pwa-settings-card">
+
+                <div class="pwa-settings-icon">
+                    🌐
+                </div>
+
+                <div>
+
+                    <strong>
+                        Install LocalLink
+                    </strong>
+
+                    <p>
+                        When installation is supported, use
+                        your browser's install option to add
+                        LocalLink to your device.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="installAppButton"
+                        class="button secondary"
+                        hidden
+                    >
+                        Install LocalLink
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACCOUNT ACTIONS
+             ================================================= -->
+
+        <section class="settings-section danger-settings">
+
+            <div class="settings-section-header">
+
+                <div class="settings-icon danger-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACCOUNT
+                    </span>
+
+                    <h2>
+                        Account Actions
+                    </h2>
+
+                    <p>
+                        Manage your current LocalLink session.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="logout-card">
+
+                <div>
+
+                    <strong>
+                        Sign out of LocalLink
+                    </strong>
+
+                    <p>
+                        You will be returned to the public
+                        LocalLink home page.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="settingsLogoutButton"
+                    class="button danger"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROTOTYPE INFORMATION
+             ================================================= -->
+
+        <section class="settings-footer-note">
+
+            <span>
+                ℹ️
+            </span>
+
+            <p>
+                The current LocalLink prototype uses predefined
+                Thane demonstration datasets. User-created
+                information, reporting, updating and expanded
+                database-backed content are planned as future
+                extensions.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+</html>

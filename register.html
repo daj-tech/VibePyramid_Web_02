@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your LocalLink account and discover useful information relevant to your local community."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Register | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+        <div class="navbar-container">
+
+            <a
+                href="index.html"
+                class="navbar-brand"
+            >
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+            </a>
+
+            <nav
+                class="navbar-nav"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="about.html"
+                    class="nav-link"
+                >
+                    About
+                </a>
+
+                <a
+                    href="login.html"
+                    class="nav-link"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="nav-button active"
+                >
+                    Get Started
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         REGISTER PAGE
+         ===================================================== -->
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <section class="auth-card">
+
+                <!-- =========================================
+                     BRAND
+                     ========================================= -->
+
+                <div class="auth-brand">
+
+                    <div class="brand-icon">
+                        <span>⌂</span>
+                    </div>
+
+                    <h1>
+                        LocalLink
+                    </h1>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+
+                <!-- =========================================
+                     HEADER
+                     ========================================= -->
+
+                <div class="auth-header">
+
+                    <span class="eyebrow">
+                        JOIN LOCALLINK
+                    </span>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Set up your profile to discover
+                        information relevant to your community.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================================
+                     MESSAGE AREA
+                     ========================================= -->
+
+                <div
+                    id="registerMessage"
+                    class="auth-message"
+                    role="alert"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+
+                <!-- =========================================
+                     REGISTER FORM
+                     ========================================= -->
+
+                <form
+                    id="registerForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Username -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            minlength="3"
+                            required
+                        >
+
+                        <small class="form-hint">
+                            Use at least 3 characters.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                        <small class="form-hint">
+                            Use at least 6 characters.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Re-enter your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="toggleConfirmPassword"
+                                class="password-toggle"
+                                aria-label="Show confirmation password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Region -->
+
+                    <div class="form-group">
+
+                        <label for="region">
+                            Region
+                        </label>
+
+                        <select
+                            id="region"
+                            name="region"
+                            required
+                        >
+                            <option value="Thane">
+                                Thane
+                            </option>
+                        </select>
+
+                        <small class="form-hint">
+                            Current prototype region.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Local Area -->
+
+                    <div class="form-group">
+
+                        <label for="area">
+                            Local Area
+                        </label>
+
+                        <select
+                            id="area"
+                            name="area"
+                            required
+                        >
+                            <option value="All Areas">
+                                All Areas
+                            </option>
+
+                            <option value="Thane West">
+                                Thane West
+                            </option>
+
+                            <option value="Thane East">
+                                Thane East
+                            </option>
+
+                            <option value="Wagle Estate">
+                                Wagle Estate
+                            </option>
+
+                            <option value="Manpada">
+                                Manpada
+                            </option>
+
+                            <option value="Majiwada">
+                                Majiwada
+                            </option>
+
+                            <option value="Kopri">
+                                Kopri
+                            </option>
+
+                            <option value="Naupada">
+                                Naupada
+                            </option>
+                        </select>
+
+                        <small class="form-hint">
+                            This helps LocalLink show relevant local information.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Terms -->
+
+                    <div class="form-options">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                            >
+
+                            <span>
+                                I understand that LocalLink is a
+                                community information platform.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Register Button -->
+
+                    <button
+                        type="submit"
+                        class="button primary auth-submit"
+                        id="registerButton"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <!-- =========================================
+                     LOGIN LINK
+                     ========================================= -->
+
+                <div class="auth-footer">
+
+                    <p>
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login here
+                        </a>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 REGISTRATION INFORMATION
+                 ============================================= -->
+
+            <div class="auth-info">
+
+                <div class="auth-info-item">
+
+                    <span class="auth-info-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Select Your Area
+                        </strong>
+
+                        <p>
+                            Choose your local area to discover
+                            relevant community information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-info-item">
+
+                    <span class="auth-info-icon">
+                        🗂️
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Explore Categories
+                        </strong>
+
+                        <p>
+                            Access educational, community,
+                            local, event and opportunity information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-info-item">
+
+                    <span class="auth-info-icon">
+                        🔔
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Stay Updated
+                        </strong>
+
+                        <p>
+                            Use LocalLink reminders to keep track
+                            of important dates and local updates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

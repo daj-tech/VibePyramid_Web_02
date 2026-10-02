@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Calendar - Track important local events, deadlines and information in one place."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Calendar | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button active"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-heading">
+
+            <span class="eyebrow">
+                THANE · LOCAL CALENDAR
+            </span>
+
+            <div class="page-title-row">
+
+                <div>
+
+                    <h1>
+                        Local Calendar
+                    </h1>
+
+                    <p>
+                        Keep track of important events, deadlines
+                        and time-sensitive local information in
+                        one place.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="dashboard.html"
+                    class="button secondary"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORY FILTERS
+             ================================================= -->
+
+        <section class="information-toolbar">
+
+            <div>
+
+                <span class="toolbar-label">
+                    CALENDAR CATEGORY
+                </span>
+
+                <div
+                    id="calendarFilters"
+                    class="filter-buttons"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="All"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Educational"
+                    >
+                        Educational
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Community"
+                    >
+                        Community
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Internships & Skills"
+                    >
+                        Opportunities
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Local"
+                    >
+                        Local
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Events"
+                    >
+                        Events
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Emergencies"
+                    >
+                        Emergencies
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected Area -->
+
+            <div class="selected-area">
+
+                <span>
+                    📍
+                </span>
+
+                <div>
+
+                    <small>
+                        Selected Area
+                    </small>
+
+                    <strong id="selectedAreaDisplay">
+                        All Areas
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CALENDAR SECTION
+             ================================================= -->
+
+        <section class="calendar-section">
+
+            <!-- Calendar Header -->
+
+            <div class="calendar-header">
+
+                <button
+                    type="button"
+                    id="previousMonth"
+                    class="calendar-nav-button"
+                    aria-label="Previous month"
+                    title="Previous month"
+                >
+                    ←
+                </button>
+
+
+                <div class="calendar-month-title">
+
+                    <span class="eyebrow">
+                        LOCAL LINK · CALENDAR
+                    </span>
+
+                    <h2 id="calendarMonth">
+                        October 2026
+                    </h2>
+
+                </div>
+
+
+                <div class="calendar-header-actions">
+
+                    <button
+                        type="button"
+                        id="todayButton"
+                        class="button secondary"
+                    >
+                        Today
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nextMonth"
+                        class="calendar-nav-button"
+                        aria-label="Next month"
+                        title="Next month"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Calendar Grid -->
+
+            <div
+                id="calendarGrid"
+                class="calendar-grid"
+            >
+
+                <!-- Filled by calendar.js -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CALENDAR LEGEND
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    CALENDAR LEGEND
+                </span>
+
+                <h2>
+                    Information categories
+                </h2>
+
+                <p>
+                    Colored markers help identify the category
+                    of information associated with a date.
+                </p>
+
+            </div>
+
+
+            <div class="calendar-legend">
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot educational"></span>
+
+                    <span>
+                        Educational
+                    </span>
+
+                </div>
+
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot community"></span>
+
+                    <span>
+                        Community
+                    </span>
+
+                </div>
+
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot internships"></span>
+
+                    <span>
+                        Internships &amp; Skills
+                    </span>
+
+                </div>
+
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot local"></span>
+
+                    <span>
+                        Local
+                    </span>
+
+                </div>
+
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot events"></span>
+
+                    <span>
+                        Events
+                    </span>
+
+                </div>
+
+
+                <div class="calendar-legend-item">
+
+                    <span class="legend-dot emergencies"></span>
+
+                    <span>
+                        Emergencies
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SELECTED DATE
+             ================================================= -->
+
+        <section
+            id="selectedDateSection"
+            class="selected-date-panel"
+            hidden
+        >
+
+            <div class="selected-date-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SELECTED DATE
+                    </span>
+
+                    <h2 id="selectedDateTitle">
+                        Selected Date
+                    </h2>
+
+                </div>
+
+
+                <span
+                    id="selectedDateCount"
+                    class="selected-date-count"
+                >
+                    0 items
+                </span>
+
+            </div>
+
+
+            <div
+                id="selectedDateResults"
+                class="calendar-event-list"
+            >
+
+                <!-- Filled by calendar.js -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             UPCOMING INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="content-result-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        UPCOMING
+                    </span>
+
+                    <h2>
+                        Important upcoming dates
+                    </h2>
+
+                </div>
+
+                <a
+                    href="events.html"
+                    class="text-link"
+                >
+                    View Events →
+                </a>
+
+            </div>
+
+
+            <div
+                id="upcomingEvents"
+                class="upcoming-list"
+            >
+
+                <div class="dashboard-empty-message">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <p>
+                        Loading upcoming information...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             REMINDER PANEL
+             ================================================= -->
+
+        <section class="education-info-panel">
+
+            <div class="education-panel-icon">
+                🔔
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    LOCALLINK · REMINDERS
+                </span>
+
+                <h2>
+                    Never miss an important local date.
+                </h2>
+
+                <p>
+                    LocalLink can use browser and Progressive Web
+                    App notifications to remind users about
+                    upcoming events, deadlines, scholarships,
+                    internships and other time-sensitive
+                    information.
+                </p>
+
+                <a
+                    href="settings.html"
+                    class="button secondary"
+                >
+                    Notification Settings
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATUS INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION STATUS
+                </span>
+
+                <h2>
+                    Understand the current state
+                </h2>
+
+                <p>
+                    Dates shown on the calendar can correspond to
+                    information with different lifecycle states.
+                </p>
+
+            </div>
+
+
+            <div class="status-legend-grid">
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-active">
+
+                        <span class="status-badge-icon">
+                            ●
+                        </span>
+
+                        Active
+
+                    </span>
+
+                    <p>
+                        Currently relevant information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-upcoming">
+
+                        <span class="status-badge-icon">
+                            ◷
+                        </span>
+
+                        Upcoming
+
+                    </span>
+
+                    <p>
+                        Future event or deadline
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-expired">
+
+                        <span class="status-badge-icon">
+                            ○
+                        </span>
+
+                        Expired
+
+                    </span>
+
+                    <p>
+                        Information validity has ended
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-resolved">
+
+                        <span class="status-badge-icon">
+                            ✓
+                        </span>
+
+                        Resolved
+
+                    </span>
+
+                    <p>
+                        Related issue or activity has been completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/csvReader.js"></script>
+    <script src="js/calendar.js"></script>
+
+</body>
+</html>

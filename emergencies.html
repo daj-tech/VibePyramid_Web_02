@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Emergency Information - Discover police, hospitals, ambulance and important emergency information in your local area."
+    >
+
+    <meta
+        name="theme-color"
+        content="#DC2626"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Emergencies | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link active"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-heading">
+
+            <span class="eyebrow">
+                THANE · EMERGENCIES
+            </span>
+
+            <div class="page-title-row">
+
+                <div>
+
+                    <h1>
+                        Emergency Information
+                    </h1>
+
+                    <p>
+                        Find emergency-related information for
+                        police, hospitals, ambulance services and
+                        other important emergency contacts relevant
+                        to your selected area.
+                    </p>
+
+                </div>
+
+                <a
+                    href="dashboard.html"
+                    class="button secondary"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMERGENCY NOTICE
+             ================================================= -->
+
+        <section class="emergency-notice">
+
+            <div class="emergency-notice-icon">
+                🚨
+            </div>
+
+            <div>
+
+                <strong>
+                    Important emergency notice
+                </strong>
+
+                <p>
+                    LocalLink displays emergency-related
+                    information available in the current
+                    dataset. For an immediate emergency,
+                    contact the appropriate verified official
+                    emergency service.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+             ================================================= -->
+
+        <section
+            id="emergencySummary"
+            class="category-summary-grid"
+        >
+
+            <!-- All -->
+
+            <button
+                type="button"
+                class="category-summary-card selected"
+                data-filter="All"
+            >
+
+                <span class="summary-mini-icon">
+                    🚨
+                </span>
+
+                <div>
+
+                    <span>
+                        All Emergency Info
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Police -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Police"
+            >
+
+                <span class="summary-mini-icon">
+                    👮
+                </span>
+
+                <div>
+
+                    <span>
+                        Police
+                    </span>
+
+                    <strong id="policeCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Hospitals -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Hospitals"
+            >
+
+                <span class="summary-mini-icon">
+                    🏥
+                </span>
+
+                <div>
+
+                    <span>
+                        Hospitals
+                    </span>
+
+                    <strong id="hospitalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Ambulance -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Ambulance"
+            >
+
+                <span class="summary-mini-icon">
+                    🚑
+                </span>
+
+                <div>
+
+                    <span>
+                        Ambulance
+                    </span>
+
+                    <strong id="ambulanceCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Emergency Contacts -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Emergency Contacts"
+            >
+
+                <span class="summary-mini-icon">
+                    📞
+                </span>
+
+                <div>
+
+                    <span>
+                        Emergency Contacts
+                    </span>
+
+                    <strong id="contactCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTER TOOLBAR
+             ================================================= -->
+
+        <section class="information-toolbar">
+
+            <div>
+
+                <span class="toolbar-label">
+                    EMERGENCY INFORMATION TYPE
+                </span>
+
+                <div
+                    id="emergencyFilters"
+                    class="filter-buttons"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="All"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Police"
+                    >
+                        Police
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Hospitals"
+                    >
+                        Hospitals
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Ambulance"
+                    >
+                        Ambulance
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Emergency Contacts"
+                    >
+                        Emergency Contacts
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected Area -->
+
+            <div class="selected-area">
+
+                <span>
+                    📍
+                </span>
+
+                <div>
+
+                    <small>
+                        Selected Area
+                    </small>
+
+                    <strong id="selectedAreaDisplay">
+                        All Areas
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULT HEADER
+             ================================================= -->
+
+        <section class="content-result-header">
+
+            <div>
+
+                <span
+                    class="eyebrow"
+                    id="resultEyebrow"
+                >
+                    ALL EMERGENCY INFORMATION
+                </span>
+
+                <h2>
+
+                    <span id="resultCount">
+                        0
+                    </span>
+
+                    <span id="resultText">
+                        results found
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <div
+            id="emergencyLoading"
+            class="dashboard-message"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading emergency information...
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             ERROR
+             ================================================= -->
+
+        <div
+            id="emergencyError"
+            class="error-box"
+            role="alert"
+            hidden
+        ></div>
+
+
+        <!-- =================================================
+             INFORMATION RESULTS
+             ================================================= -->
+
+        <section>
+
+            <div
+                id="emergencyResults"
+                class="info-grid"
+            ></div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="emergencyEmpty"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    🚨
+                </div>
+
+                <h3>
+                    No emergency information found
+                </h3>
+
+                <p>
+                    There is no emergency information matching
+                    your selected area and category.
+                </p>
+
+                <button
+                    type="button"
+                    id="showAllEmergencies"
+                    class="button secondary"
+                >
+                    Show All Emergency Information
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMERGENCY INFORMATION PANEL
+             ================================================= -->
+
+        <section class="emergency-info-panel">
+
+            <div class="emergency-panel-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    LOCALLINK · EMERGENCIES
+                </span>
+
+                <h2>
+                    Access important emergency information quickly.
+                </h2>
+
+                <p>
+                    LocalLink organizes emergency-related
+                    information by type and local area so users
+                    can find relevant information available in
+                    the current dataset.
+                </p>
+
+                <p class="emergency-panel-note">
+                    For an immediate emergency, use the
+                    appropriate verified official emergency
+                    service.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMERGENCY INFORMATION TYPES
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    EMERGENCY INFORMATION
+                </span>
+
+                <h2>
+                    What you can discover
+                </h2>
+
+                <p>
+                    Explore different types of emergency-related
+                    information available through LocalLink.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <!-- Police -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        👮
+                    </div>
+
+                    <h3>
+                        Police
+                    </h3>
+
+                    <p>
+                        Emergency-related police information
+                        relevant to the local community.
+                    </p>
+
+                </article>
+
+
+                <!-- Hospitals -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Hospitals
+                    </h3>
+
+                    <p>
+                        Hospital and healthcare-related
+                        emergency information available
+                        in the dataset.
+                    </p>
+
+                </article>
+
+
+                <!-- Ambulance -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        🚑
+                    </div>
+
+                    <h3>
+                        Ambulance
+                    </h3>
+
+                    <p>
+                        Ambulance-related information for
+                        emergency situations.
+                    </p>
+
+                </article>
+
+
+                <!-- Contacts -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        📞
+                    </div>
+
+                    <h3>
+                        Emergency Contacts
+                    </h3>
+
+                    <p>
+                        Important emergency contact and
+                        service information available through
+                        the current dataset.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATUS INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION STATUS
+                </span>
+
+                <h2>
+                    Check the current state
+                </h2>
+
+                <p>
+                    Emergency-related information can change,
+                    so LocalLink uses clear status indicators.
+                </p>
+
+            </div>
+
+
+            <div class="status-legend-grid">
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-active">
+
+                        <span class="status-badge-icon">
+                            ●
+                        </span>
+
+                        Active
+
+                    </span>
+
+                    <p>
+                        Currently relevant information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-upcoming">
+
+                        <span class="status-badge-icon">
+                            ◷
+                        </span>
+
+                        Upcoming
+
+                    </span>
+
+                    <p>
+                        Future emergency-related information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-expired">
+
+                        <span class="status-badge-icon">
+                            ○
+                        </span>
+
+                        Expired
+
+                    </span>
+
+                    <p>
+                        Information validity has ended
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-resolved">
+
+                        <span class="status-badge-icon">
+                            ✓
+                        </span>
+
+                        Resolved
+
+                    </span>
+
+                    <p>
+                        Related issue or situation has been completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SAFETY NOTE
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="emergency-notice">
+
+                <div class="emergency-notice-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Verify before relying on emergency information
+                    </strong>
+
+                    <p>
+                        The current LocalLink prototype uses
+                        predefined demonstration data. Emergency
+                        information should be confirmed through
+                        appropriate verified official sources,
+                        especially during an active emergency.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUTURE EXTENSION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="community-future-panel">
+
+                <div class="community-future-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        FUTURE EXTENSION
+                    </span>
+
+                    <h2>
+                        Better emergency information workflows.
+                    </h2>
+
+                    <p>
+                        Future versions of LocalLink can support
+                        community updates, reporting, verification
+                        workflows and better information lifecycle
+                        management for emergency-related content.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/csvReader.js"></script>
+    <script src="js/emergencies.js"></script>
+
+</body>
+</html>

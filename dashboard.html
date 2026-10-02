@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Dashboard - Discover useful local information relevant to your community."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Dashboard | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link active"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             DASHBOARD HEADER
+             ================================================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    LOCALLINK · THANE
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="welcomeUser">
+                        User
+                    </span>
+                </h1>
+
+                <p>
+                    Discover useful information relevant to
+                    your selected local area.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-actions">
+
+                <a
+                    href="calendar.html"
+                    class="button secondary"
+                >
+                    📅 Calendar
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="button secondary"
+                >
+                    ⚙️ Settings
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCATION SELECTOR
+             ================================================= -->
+
+        <section class="dashboard-location-card">
+
+            <div class="dashboard-location-content">
+
+                <div class="dashboard-location-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR LOCAL AREA
+                    </span>
+
+                    <h2>
+                        Information for
+                        <span id="selectedAreaName">
+                            All Areas
+                        </span>
+                    </h2>
+
+                    <p>
+                        Change your selected area to discover
+                        information relevant to another part
+                        of Thane.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-location-controls">
+
+                <label for="dashboardArea">
+                    Local Area
+                </label>
+
+                <select
+                    id="dashboardArea"
+                    class="settings-select"
+                >
+
+                    <option value="All Areas">
+                        All Areas
+                    </option>
+
+                    <option value="Thane West">
+                        Thane West
+                    </option>
+
+                    <option value="Thane East">
+                        Thane East
+                    </option>
+
+                    <option value="Wagle Estate">
+                        Wagle Estate
+                    </option>
+
+                    <option value="Manpada">
+                        Manpada
+                    </option>
+
+                    <option value="Majiwada">
+                        Majiwada
+                    </option>
+
+                    <option value="Kopri">
+                        Kopri
+                    </option>
+
+                    <option value="Naupada">
+                        Naupada
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORY OVERVIEW
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION CATEGORIES
+                </span>
+
+                <h2>
+                    Explore Local Information
+                </h2>
+
+                <p>
+                    Select a category to discover information
+                    available in your local community.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card-grid">
+
+
+                <!-- Educational -->
+
+                <a
+                    href="educational.html"
+                    class="dashboard-card dashboard-category-educational"
+                >
+
+                    <div class="dashboard-card-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Educational
+                    </h3>
+
+                    <p>
+                        Admissions, scholarships and exam dates.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="educationalCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Information items
+                    </small>
+
+                </a>
+
+
+                <!-- Community -->
+
+                <a
+                    href="community.html"
+                    class="dashboard-card dashboard-category-community"
+                >
+
+                    <div class="dashboard-card-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Community
+                    </h3>
+
+                    <p>
+                        Announcements, notices and awareness
+                        information.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="communityCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Information items
+                    </small>
+
+                </a>
+
+
+                <!-- Internships -->
+
+                <a
+                    href="internships-skills.html"
+                    class="dashboard-card dashboard-category-internships"
+                >
+
+                    <div class="dashboard-card-icon">
+                        💼
+                    </div>
+
+                    <h3>
+                        Internships &amp; Skills
+                    </h3>
+
+                    <p>
+                        Internships, training and learning
+                        opportunities.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="internshipsCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Opportunities
+                    </small>
+
+                </a>
+
+
+                <!-- Local -->
+
+                <a
+                    href="local.html"
+                    class="dashboard-card dashboard-category-local"
+                >
+
+                    <div class="dashboard-card-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Local
+                    </h3>
+
+                    <p>
+                        Lost &amp; found, water shortages,
+                        electricity cuts and local issues.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="localCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Local updates
+                    </small>
+
+                </a>
+
+
+                <!-- Events -->
+
+                <a
+                    href="events.html"
+                    class="dashboard-card dashboard-category-events"
+                >
+
+                    <div class="dashboard-card-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Events
+                    </h3>
+
+                    <p>
+                        Workshops, seminars and community
+                        activities.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="eventsCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Events
+                    </small>
+
+                </a>
+
+
+                <!-- Emergencies -->
+
+                <a
+                    href="emergencies.html"
+                    class="dashboard-card dashboard-category-emergencies"
+                >
+
+                    <div class="dashboard-card-icon">
+                        🚨
+                    </div>
+
+                    <h3>
+                        Emergencies
+                    </h3>
+
+                    <p>
+                        Police, hospitals, ambulance and
+                        emergency information.
+                    </p>
+
+                    <span
+                        class="dashboard-card-value"
+                        id="emergenciesCount"
+                    >
+                        0
+                    </span>
+
+                    <small>
+                        Emergency information
+                    </small>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD SUMMARY
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    LOCAL OVERVIEW
+                </span>
+
+                <h2>
+                    Your Information Snapshot
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-summary-grid">
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Information
+                        </span>
+
+                        <strong id="totalInformation">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active Information
+                        </span>
+
+                        <strong id="activeInformation">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-icon">
+                        🕒
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                        <strong id="upcomingInformation">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-icon">
+                        🚨
+                    </div>
+
+                    <div>
+
+                        <span>
+                            High Priority
+                        </span>
+
+                        <strong id="highPriorityInformation">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             IMPORTANT / UPCOMING INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="dashboard-content-grid">
+
+
+                <!-- IMPORTANT INFORMATION -->
+
+                <article class="dashboard-panel">
+
+                    <div class="dashboard-panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                IMPORTANT
+                            </span>
+
+                            <h2>
+                                Important Local Information
+                            </h2>
+
+                        </div>
+
+                        <span class="panel-icon">
+                            ⭐
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="importantInformation"
+                        class="dashboard-information-list"
+                    >
+
+                        <div class="dashboard-empty-message">
+
+                            <span>
+                                📋
+                            </span>
+
+                            <p>
+                                Loading important information...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- UPCOMING INFORMATION -->
+
+                <article class="dashboard-panel">
+
+                    <div class="dashboard-panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                UPCOMING
+                            </span>
+
+                            <h2>
+                                Upcoming Dates
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="calendar.html"
+                            class="text-link"
+                        >
+                            Calendar →
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        id="upcomingInformation"
+                        class="dashboard-information-list"
+                    >
+
+                        <div class="dashboard-empty-message">
+
+                            <span>
+                                📅
+                            </span>
+
+                            <p>
+                                Loading upcoming information...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATUS LEGEND
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION STATUS
+                </span>
+
+                <h2>
+                    Understand Information Status
+                </h2>
+
+            </div>
+
+
+            <div class="status-legend-grid">
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-active">
+                        <span class="status-badge-icon">
+                            ●
+                        </span>
+
+                        Active
+                    </span>
+
+                    <p>
+                        Currently relevant information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-upcoming">
+                        <span class="status-badge-icon">
+                            ◷
+                        </span>
+
+                        Upcoming
+                    </span>
+
+                    <p>
+                        Future event or deadline
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-expired">
+                        <span class="status-badge-icon">
+                            ○
+                        </span>
+
+                        Expired
+                    </span>
+
+                    <p>
+                        Information validity has ended
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-resolved">
+                        <span class="status-badge-icon">
+                            ✓
+                        </span>
+
+                        Resolved
+                    </span>
+
+                    <p>
+                        Related issue has been completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             QUICK ACCESS
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    QUICK ACCESS
+                </span>
+
+                <h2>
+                    Useful LocalLink Tools
+                </h2>
+
+            </div>
+
+
+            <div class="quick-access-grid">
+
+
+                <a
+                    href="calendar.html"
+                    class="quick-access-card"
+                >
+
+                    <div class="quick-access-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Local Calendar
+                        </strong>
+
+                        <p>
+                            View events and deadlines.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="events.html"
+                    class="quick-access-card"
+                >
+
+                    <div class="quick-access-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Local Events
+                        </strong>
+
+                        <p>
+                            Explore upcoming community events.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="settings.html"
+                    class="quick-access-card"
+                >
+
+                    <div class="quick-access-icon">
+                        ⚙️
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Settings
+                        </strong>
+
+                        <p>
+                            Manage area and notification preferences.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    id="enableNotifications"
+                    class="quick-access-card"
+                >
+
+                    <div class="quick-access-icon">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <p>
+                            Enable LocalLink reminders.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATION PANEL
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="notification-dashboard-panel">
+
+                <div class="notification-dashboard-icon">
+                    🔔
+                </div>
+
+                <div class="notification-dashboard-content">
+
+                    <span class="eyebrow">
+                        LOCALLINK REMINDERS
+                    </span>
+
+                    <h2>
+                        Stay informed about important dates.
+                    </h2>
+
+                    <p>
+                        Enable browser notifications to receive
+                        reminders for upcoming local events,
+                        scholarships, internships and deadlines.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="dashboardNotificationButton"
+                    class="button primary"
+                >
+                    Enable Notifications
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/csvReader.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

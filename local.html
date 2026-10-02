@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Local Information - Discover lost and found items, water shortages, electricity cuts and other local issues in Thane."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Local Issues | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link active"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-heading">
+
+            <span class="eyebrow">
+                THANE · LOCAL
+            </span>
+
+            <div class="page-title-row">
+
+                <div>
+
+                    <h1>
+                        Local Information
+                    </h1>
+
+                    <p>
+                        Discover useful updates about lost and
+                        found items, water shortages, electricity
+                        cuts and other local issues affecting your
+                        selected area.
+                    </p>
+
+                </div>
+
+                <a
+                    href="dashboard.html"
+                    class="button secondary"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCAL NOTICE
+             ================================================= -->
+
+        <section class="local-notice">
+
+            <div class="local-notice-icon">
+                📍
+            </div>
+
+            <div>
+
+                <strong>
+                    Local area information
+                </strong>
+
+                <p>
+                    Select a local area to find information
+                    relevant to that part of Thane.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+             ================================================= -->
+
+        <section
+            id="localSummary"
+            class="category-summary-grid"
+        >
+
+            <!-- All -->
+
+            <button
+                type="button"
+                class="category-summary-card selected"
+                data-filter="All"
+            >
+
+                <span class="summary-mini-icon">
+                    📍
+                </span>
+
+                <div>
+
+                    <span>
+                        All Local Information
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Lost & Found -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Lost & Found"
+            >
+
+                <span class="summary-mini-icon">
+                    🔎
+                </span>
+
+                <div>
+
+                    <span>
+                        Lost &amp; Found
+                    </span>
+
+                    <strong id="lostFoundCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Water Shortage -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Water Shortage"
+            >
+
+                <span class="summary-mini-icon">
+                    💧
+                </span>
+
+                <div>
+
+                    <span>
+                        Water Shortage
+                    </span>
+
+                    <strong id="waterShortageCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Electricity Cut -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Electricity Cut"
+            >
+
+                <span class="summary-mini-icon">
+                    ⚡
+                </span>
+
+                <div>
+
+                    <span>
+                        Electricity Cut
+                    </span>
+
+                    <strong id="electricityCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Other Local Issues -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Other Local Issues"
+            >
+
+                <span class="summary-mini-icon">
+                    🛠️
+                </span>
+
+                <div>
+
+                    <span>
+                        Other Issues
+                    </span>
+
+                    <strong id="otherIssuesCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTER TOOLBAR
+             ================================================= -->
+
+        <section class="information-toolbar">
+
+            <div>
+
+                <span class="toolbar-label">
+                    LOCAL INFORMATION TYPE
+                </span>
+
+                <div
+                    id="localFilters"
+                    class="filter-buttons"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="All"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Lost & Found"
+                    >
+                        Lost &amp; Found
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Water Shortage"
+                    >
+                        Water Shortage
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Electricity Cut"
+                    >
+                        Electricity Cut
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Other Local Issues"
+                    >
+                        Other Local Issues
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected Area -->
+
+            <div class="selected-area">
+
+                <span>
+                    📍
+                </span>
+
+                <div>
+
+                    <small>
+                        Selected Area
+                    </small>
+
+                    <strong id="selectedAreaDisplay">
+                        All Areas
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULT HEADER
+             ================================================= -->
+
+        <section class="content-result-header">
+
+            <div>
+
+                <span
+                    class="eyebrow"
+                    id="resultEyebrow"
+                >
+                    ALL LOCAL INFORMATION
+                </span>
+
+                <h2>
+
+                    <span id="resultCount">
+                        0
+                    </span>
+
+                    <span id="resultText">
+                        results found
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <div
+            id="localLoading"
+            class="dashboard-message"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading local information...
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             ERROR
+             ================================================= -->
+
+        <div
+            id="localError"
+            class="error-box"
+            role="alert"
+            hidden
+        ></div>
+
+
+        <!-- =================================================
+             INFORMATION RESULTS
+             ================================================= -->
+
+        <section>
+
+            <div
+                id="localResults"
+                class="info-grid"
+            ></div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="localEmpty"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    📍
+                </div>
+
+                <h3>
+                    No local information found
+                </h3>
+
+                <p>
+                    There is no local information matching
+                    your selected area and category.
+                </p>
+
+                <button
+                    type="button"
+                    id="showAllLocal"
+                    class="button secondary"
+                >
+                    Show All Local Information
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INFORMATION PANEL
+             ================================================= -->
+
+        <section class="education-info-panel">
+
+            <div class="education-panel-icon">
+                📢
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    LOCALLINK · LOCAL
+                </span>
+
+                <h2>
+                    Know what is happening around you.
+                </h2>
+
+                <p>
+                    LocalLink organizes everyday local updates
+                    such as lost and found information, water
+                    shortages, electricity maintenance and other
+                    issues affecting the community.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCAL INFORMATION TYPES
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    LOCAL ISSUES
+                </span>
+
+                <h2>
+                    What you can discover
+                </h2>
+
+                <p>
+                    Explore different types of locally relevant
+                    information.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <!-- Lost & Found -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        Lost &amp; Found
+                    </h3>
+
+                    <p>
+                        Discover information about lost or
+                        found belongings reported in the
+                        local community.
+                    </p>
+
+                </article>
+
+
+                <!-- Water -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        💧
+                    </div>
+
+                    <h3>
+                        Water Shortage
+                    </h3>
+
+                    <p>
+                        Find local information about water
+                        shortages, supply interruptions and
+                        related updates.
+                    </p>
+
+                </article>
+
+
+                <!-- Electricity -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Electricity Cut
+                    </h3>
+
+                    <p>
+                        Discover information about scheduled
+                        electricity maintenance and local
+                        power interruptions.
+                    </p>
+
+                </article>
+
+
+                <!-- Other -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Other Local Issues
+                    </h3>
+
+                    <p>
+                        Access other important everyday
+                        information affecting your local
+                        community.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATUS INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION STATUS
+                </span>
+
+                <h2>
+                    Understand the current state
+                </h2>
+
+                <p>
+                    Local issues may be active, upcoming,
+                    expired or resolved.
+                </p>
+
+            </div>
+
+
+            <div class="status-legend-grid">
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-active">
+
+                        <span class="status-badge-icon">
+                            ●
+                        </span>
+
+                        Active
+
+                    </span>
+
+                    <p>
+                        Issue or information is currently relevant
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-upcoming">
+
+                        <span class="status-badge-icon">
+                            ◷
+                        </span>
+
+                        Upcoming
+
+                    </span>
+
+                    <p>
+                        Scheduled or future local information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-expired">
+
+                        <span class="status-badge-icon">
+                            ○
+                        </span>
+
+                        Expired
+
+                    </span>
+
+                    <p>
+                        Information validity has ended
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-resolved">
+
+                        <span class="status-badge-icon">
+                            ✓
+                        </span>
+
+                        Resolved
+
+                    </span>
+
+                    <p>
+                        Local issue has been completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUTURE EXTENSION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="community-future-panel">
+
+                <div class="community-future-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        FUTURE EXTENSION
+                    </span>
+
+                    <h2>
+                        Community-powered local updates.
+                    </h2>
+
+                    <p>
+                        Future versions of LocalLink can allow
+                        users to create, update and report local
+                        information so that issues can move
+                        through the complete information lifecycle.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/csvReader.js"></script>
+    <script src="js/local.js"></script>
+
+</body>
+</html>

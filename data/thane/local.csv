@@ -1,0 +1,9 @@
+﻿id,title,category,subcategory,description,region,local_area,event_date,start_time,end_time,deadline,status,priority,source_type,source_reference,contact_info,notification_days_before
+LOC001,Scheduled Electricity Maintenance,Local,Electricity Cut,Demonstration notice for scheduled electrical maintenance in the selected area.,Thane,Thane West,2026-10-04,14:00,17:00,,ACTIVE,High,Official Notice (Demo),DEMO-DATA,,1
+LOC002,Water Supply Interruption,Local,Water Shortage,Demonstration update about a planned water supply interruption.,Thane,Thane East,2026-10-06,09:00,15:00,,UPCOMING,High,Official Notice (Demo),DEMO-DATA,,1
+LOC003,Road Diversion Near Main Junction,Local,Road Issue,Demonstration local traffic update for temporary road diversion.,Thane,Majiwada,2026-10-05,07:00,21:00,,ACTIVE,High,Community Demo,DEMO-DATA,,1
+LOC004,Lost Black Wallet,Local,Lost & Found,Demonstration lost-and-found post for a black wallet reported near a college gate.,Thane,Naupada,,,,,ACTIVE,Medium,Community Submission (Demo),DEMO-DATA,,0
+LOC005,Found Student ID Card,Local,Lost & Found,Demonstration found-item post for a student identification card.,Thane,Kalwa,,,,,RESOLVED,Low,Community Submission (Demo),DEMO-DATA,,0
+LOC006,Water Supply Restored,Local,Water Shortage,Demonstration record showing a water-supply issue that has been resolved.,Thane,Manpada,2026-09-30,08:00,13:00,,RESOLVED,Medium,Community Demo,DEMO-DATA,,0
+LOC007,Temporary Road Blockage,Local,Road Issue,Past demonstration road issue retained to show a resolved lifecycle state.,Thane,Ghodbunder Road,2026-09-29,06:00,12:00,,RESOLVED,Medium,Community Demo,DEMO-DATA,,0
+LOC008,Streetlight Repair Update,Local,Other Local Issues,Demonstration update about repair work on streetlights in the area.,Thane,Vartak Nagar,2026-10-08,10:00,16:00,,UPCOMING,Medium,Community Demo,DEMO-DATA,,1

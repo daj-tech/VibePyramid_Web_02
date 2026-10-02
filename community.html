@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="LocalLink Community Information - Discover announcements, notices, awareness activities and important local community updates."
+    >
+
+    <meta
+        name="theme-color"
+        content="#1D4ED8"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/icon-192.png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Community | LocalLink</title>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- Brand -->
+
+            <a
+                href="dashboard.html"
+                class="navbar-brand"
+            >
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div class="brand-text">
+                    <strong>LocalLink</strong>
+                    <span>Local Information Network</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="navbar-nav"
+                aria-label="Dashboard navigation"
+            >
+
+                <a
+                    href="dashboard.html"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="educational.html"
+                    class="nav-link"
+                >
+                    Educational
+                </a>
+
+                <a
+                    href="community.html"
+                    class="nav-link active"
+                >
+                    Community
+                </a>
+
+                <a
+                    href="internships-skills.html"
+                    class="nav-link"
+                >
+                    Opportunities
+                </a>
+
+                <a
+                    href="local.html"
+                    class="nav-link"
+                >
+                    Local
+                </a>
+
+                <a
+                    href="events.html"
+                    class="nav-link"
+                >
+                    Events
+                </a>
+
+                <a
+                    href="emergencies.html"
+                    class="nav-link"
+                >
+                    Emergencies
+                </a>
+
+            </nav>
+
+
+            <!-- Right Actions -->
+
+            <div class="navbar-actions">
+
+                <div class="navbar-location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+                        <small id="navRegion">
+                            Thane
+                        </small>
+
+                        <strong id="navArea">
+                            All Areas
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="calendar.html"
+                    class="navbar-icon-button"
+                    title="Calendar"
+                    aria-label="Open calendar"
+                >
+                    📅
+                </a>
+
+
+                <button
+                    type="button"
+                    id="notificationButton"
+                    class="navbar-icon-button"
+                    title="Notifications"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="navbar-icon-button"
+                    title="Settings"
+                    aria-label="Open settings"
+                >
+                    ⚙️
+                </a>
+
+
+                <div class="navbar-user">
+
+                    <div
+                        class="navbar-avatar"
+                        id="navAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="navbar-user-info">
+
+                        <strong id="navUserName">
+                            User
+                        </strong>
+
+                        <span id="navUsername">
+                            @user
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="navbar-logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-heading">
+
+            <span class="eyebrow">
+                THANE · COMMUNITY
+            </span>
+
+            <div class="page-title-row">
+
+                <div>
+
+                    <h1>
+                        Community Information
+                    </h1>
+
+                    <p>
+                        Discover announcements, community notices,
+                        awareness activities, volunteer opportunities
+                        and other information relevant to your local
+                        community.
+                    </p>
+
+                </div>
+
+                <a
+                    href="dashboard.html"
+                    class="button secondary"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+             ================================================= -->
+
+        <section
+            id="communitySummary"
+            class="category-summary-grid"
+        >
+
+            <!-- All -->
+
+            <button
+                type="button"
+                class="category-summary-card selected"
+                data-filter="All"
+            >
+
+                <span class="summary-mini-icon">
+                    👥
+                </span>
+
+                <div>
+
+                    <span>
+                        All Information
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Announcements -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Announcement"
+            >
+
+                <span class="summary-mini-icon">
+                    📢
+                </span>
+
+                <div>
+
+                    <span>
+                        Announcements
+                    </span>
+
+                    <strong id="announcementCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Community Notices -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Community Notice"
+            >
+
+                <span class="summary-mini-icon">
+                    📄
+                </span>
+
+                <div>
+
+                    <span>
+                        Community Notices
+                    </span>
+
+                    <strong id="noticeCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+
+            <!-- Awareness -->
+
+            <button
+                type="button"
+                class="category-summary-card"
+                data-filter="Awareness"
+            >
+
+                <span class="summary-mini-icon">
+                    💡
+                </span>
+
+                <div>
+
+                    <span>
+                        Awareness
+                    </span>
+
+                    <strong id="awarenessCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTER TOOLBAR
+             ================================================= -->
+
+        <section class="information-toolbar">
+
+            <div>
+
+                <span class="toolbar-label">
+                    COMMUNITY INFORMATION TYPE
+                </span>
+
+                <div
+                    id="communityFilters"
+                    class="filter-buttons"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="All"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Announcement"
+                    >
+                        Announcement
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Community Notice"
+                    >
+                        Community Notice
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Awareness"
+                    >
+                        Awareness
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Volunteer"
+                    >
+                        Volunteer
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Community Event"
+                    >
+                        Community Event
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Important Notice"
+                    >
+                        Important Notice
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="Support"
+                    >
+                        Support
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected Area -->
+
+            <div class="selected-area">
+
+                <span>
+                    📍
+                </span>
+
+                <div>
+
+                    <small>
+                        Selected Area
+                    </small>
+
+                    <strong id="selectedAreaDisplay">
+                        All Areas
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULT HEADER
+             ================================================= -->
+
+        <section class="content-result-header">
+
+            <div>
+
+                <span
+                    class="eyebrow"
+                    id="resultEyebrow"
+                >
+                    ALL COMMUNITY INFORMATION
+                </span>
+
+                <h2>
+
+                    <span id="resultCount">
+                        0
+                    </span>
+
+                    <span id="resultText">
+                        results found
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <div
+            id="communityLoading"
+            class="dashboard-message"
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading community information...
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             ERROR
+             ================================================= -->
+
+        <div
+            id="communityError"
+            class="error-box"
+            role="alert"
+            hidden
+        ></div>
+
+
+        <!-- =================================================
+             INFORMATION RESULTS
+             ================================================= -->
+
+        <section>
+
+            <div
+                id="communityResults"
+                class="info-grid"
+            ></div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="communityEmpty"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    👥
+                </div>
+
+                <h3>
+                    No community information found
+                </h3>
+
+                <p>
+                    There is no community information matching
+                    your selected area and category.
+                </p>
+
+                <button
+                    type="button"
+                    id="showAllCommunity"
+                    class="button secondary"
+                >
+                    Show All Information
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COMMUNITY INFORMATION PANEL
+             ================================================= -->
+
+        <section class="education-info-panel">
+
+            <div class="education-panel-icon">
+                🤝
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    LOCALLINK · COMMUNITY
+                </span>
+
+                <h2>
+                    Stay connected with your local community.
+                </h2>
+
+                <p>
+                    LocalLink organizes community announcements,
+                    notices, awareness activities and other
+                    useful local updates so people can discover
+                    information relevant to their selected area.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COMMUNITY INFORMATION TYPES
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    COMMUNITY INFORMATION
+                </span>
+
+                <h2>
+                    What you can discover
+                </h2>
+
+                <p>
+                    Explore different types of information shared
+                    within the local community.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <!-- Announcement -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        📢
+                    </div>
+
+                    <h3>
+                        Announcements
+                    </h3>
+
+                    <p>
+                        Important announcements relevant to
+                        local residents and community members.
+                    </p>
+
+                </article>
+
+
+                <!-- Notice -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Community Notices
+                    </h3>
+
+                    <p>
+                        Notices containing useful local
+                        community information and updates.
+                    </p>
+
+                </article>
+
+
+                <!-- Awareness -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        Awareness
+                    </h3>
+
+                    <p>
+                        Awareness activities and information
+                        intended to support the community.
+                    </p>
+
+                </article>
+
+
+                <!-- Volunteer -->
+
+                <article class="category-card">
+
+                    <div class="category-card-icon">
+                        🙋
+                    </div>
+
+                    <h3>
+                        Volunteer
+                    </h3>
+
+                    <p>
+                        Opportunities for community members
+                        to participate and contribute.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATUS INFORMATION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    INFORMATION STATUS
+                </span>
+
+                <h2>
+                    Check the current state
+                </h2>
+
+                <p>
+                    Community information can change over time,
+                    so LocalLink uses clear status indicators.
+                </p>
+
+            </div>
+
+
+            <div class="status-legend-grid">
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-active">
+
+                        <span class="status-badge-icon">
+                            ●
+                        </span>
+
+                        Active
+
+                    </span>
+
+                    <p>
+                        Currently relevant information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-upcoming">
+
+                        <span class="status-badge-icon">
+                            ◷
+                        </span>
+
+                        Upcoming
+
+                    </span>
+
+                    <p>
+                        Future community information
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-expired">
+
+                        <span class="status-badge-icon">
+                            ○
+                        </span>
+
+                        Expired
+
+                    </span>
+
+                    <p>
+                        Information validity has ended
+                    </p>
+
+                </div>
+
+
+                <div class="status-legend-item">
+
+                    <span class="status-badge status-resolved">
+
+                        <span class="status-badge-icon">
+                            ✓
+                        </span>
+
+                        Resolved
+
+                    </span>
+
+                    <p>
+                        Related issue or situation has been completed
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUTURE COMMUNITY CONTRIBUTION
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="community-future-panel">
+
+                <div class="community-future-icon">
+                    💬
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">
+                        FUTURE EXTENSION
+                    </span>
+
+                    <h2>
+                        Community contribution
+                    </h2>
+
+                    <p>
+                        Future versions of LocalLink can allow
+                        community members to create, update and
+                        report locally relevant information,
+                        following the complete information lifecycle.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    <span>⌂</span>
+                </div>
+
+                <div>
+
+                    <strong>
+                        LocalLink
+                    </strong>
+
+                    <p>
+                        Local Information Sharing Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="calendar.html">
+                    Calendar
+                </a>
+
+                <a href="settings.html">
+                    Settings
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    TEKTONIX'26 · Web Development
+                </span>
+
+                <span>
+                    Prototype Region: Thane
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/csvReader.js"></script>
+    <script src="js/community.js"></script>
+
+</body>
+</html>
